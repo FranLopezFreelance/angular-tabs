@@ -26,6 +26,15 @@
   cursor: default;
 }
 
+.tab {
+  width: 12vw;
+  background:rgb(245, 244, 244);
+  border-radius: 5px 5px 0px 0px;
+  margin: 0px 1px;
+  padding: 8px;
+  cursor: default;
+}
+
 .active-tab {
   background: white;
   .close-tab-btn:hover {

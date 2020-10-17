@@ -1,5 +1,5 @@
 export const tabs = [
- /*  {
+  {
     url: 'tab1',
     name: 'Tab 1',
     active: true
@@ -23,5 +23,5 @@ export const tabs = [
     url: 'tab5',
     name: 'Tab 5',
     active: false
-  }, */
+  },
 ]
