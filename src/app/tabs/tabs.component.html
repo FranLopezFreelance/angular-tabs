@@ -1,0 +1,14 @@
+<div class="tab-bar">
+  <ul class="tab-list" cdkDropList cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)=drop($event)>
+    <li *ngFor="let tab of tabsService.tabs; let i = index"
+      class="tab" [class.active-tab]="tab.active"
+      (mousedown)="selectTab(i)" cdkDrag cdkDragBoundary=".tab-bar">
+      {{tab.name}}
+      <button class="close-tab-btn"
+        (click)="closeTab(i)">
+        x
+      </button>
+    </li>
+  </ul>
+</div>

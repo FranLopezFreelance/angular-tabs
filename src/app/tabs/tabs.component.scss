@@ -1,0 +1,63 @@
+.tab-bar {
+  background: rgb(214, 214, 214);
+  padding-left: 90px;
+  padding-top: 4px;
+  display: flex;
+  height: 5.5vh;
+}
+
+.tab-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  height: 80px;
+  li {
+    display: inline-block;
+    list-style: none;
+  }
+}
+
+.tab {
+  width: 12vw;
+  background:rgb(236, 234, 234);
+  border-radius: 5px 5px 0px 0px;
+  margin: 0px 1px;
+  padding: 8px;
+  cursor: default;
+}
+
+.active-tab {
+  background: white;
+  .close-tab-btn:hover {
+    background-color: rgb(211, 211, 211);
+  }
+}
+
+.close-tab-btn {
+  float: right;
+  background-color: transparent;
+  border: 0px;
+  border-radius: 50%;
+  padding: 2px 5px;
+}
+
+.close-tab-btn:hover {
+  background-color: rgb(195, 195, 195);
+}
+
+.cdk-drag-preview {
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
