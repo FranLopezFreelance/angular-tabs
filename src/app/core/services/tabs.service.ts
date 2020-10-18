@@ -20,24 +20,31 @@ export class TabsService {
   }
 
   initialState(){
+
     if(localStorage.getItem('TABS')){
       this.tabs = JSON.parse(localStorage.getItem('TABS'));
+      if(this.location.path().length && this.location.path() != '/'){
+        const path = this.paths.filter(p => '/' + p.url == this.location.path());
+        if(path){
+          const pathInTabs = this.tabs.find(t => t.url == path[0].url);
+          if(pathInTabs){
+            this.setTabsInactive();
+            pathInTabs.active = true;
+          }else{
+            this.newTab(path[0].url, path[0].name);
+          }
+        }
+      }
+      for(let i=0; i<this.tabs.length; i++){
+        if(this.tabs[i].active){
+          this.setActiveTab(i);
+        }
+      }
     }
     if(this.tabs.length == 0){
       this.router.navigate(['/']);
     }
-    if(this.location.path().length && this.location.path() != '/'){
-      const path = this.paths.filter(p => '/' + p.url == this.location.path());
-      if(path){
-        const pathInTabs = this.tabs.find(t => t.url == path[0].url);
-        if(pathInTabs){
-          this.setTabsInactive();
-          pathInTabs.active = true;
-        }else{
-          this.newTab(path[0].url, path[0].name);
-        }
-      }
-    }
+
   }
 
   newTab(url: string, name: string): void {
