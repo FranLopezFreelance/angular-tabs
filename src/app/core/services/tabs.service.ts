@@ -9,7 +9,7 @@ import { Location } from "@angular/common";
 })
 export class TabsService {
 
-  tabs: Tab[];
+  tabs: Tab[] = [];
   paths: Tab[] = tabs;
 
   constructor(
@@ -40,15 +40,17 @@ export class TabsService {
           this.setActiveTab(i);
         }
       }
+    }else{
+      localStorage.setItem('TABS', JSON.stringify(this.tabs));
     }
-    if(this.tabs.length == 0){
+    if(this.tabs && this.tabs.length == 0){
       this.router.navigate(['/']);
     }
 
   }
 
   newTab(url: string, name: string): void {
-    if(this.tabs.length < 7){
+    if(this.tabs.length < 12){
       const tab = {
         url, name, active: true
       }

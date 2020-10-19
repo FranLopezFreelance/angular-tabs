@@ -1,6 +1,6 @@
 .tab-bar {
   background: rgb(214, 214, 214);
-  padding-left: 90px;
+  padding-left: 6vw;
   padding-top: 4px;
   display: flex;
   height: 5.5vh;
@@ -18,7 +18,7 @@
 }
 
 .tab {
-  width: 12vw;
+  width: 11.93vw;
   background:rgb(236, 234, 234);
   border-radius: 5px 5px 0px 0px;
   margin: 0px 1px;
@@ -26,13 +26,24 @@
   cursor: default;
 }
 
-.tab {
-  width: 12vw;
-  background:rgb(245, 244, 244);
-  border-radius: 5px 5px 0px 0px;
-  margin: 0px 1px;
-  padding: 8px;
-  cursor: default;
+.size-8 {
+  width: 10.28vw;
+}
+
+.size-9 {
+  width: 9vw;
+}
+
+.size-10 {
+  width: 7.97vw;
+}
+
+.size-11 {
+  width: 7.11vw;
+}
+
+.size-12 {
+  width: 6.4vw;
 }
 
 .active-tab {
@@ -40,6 +51,10 @@
   .close-tab-btn:hover {
     background-color: rgb(211, 211, 211);
   }
+}
+
+.tab-title {
+  font-size: 0.8em;
 }
 
 .close-tab-btn {

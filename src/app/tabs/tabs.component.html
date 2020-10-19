@@ -3,8 +3,13 @@
     (cdkDropListDropped)=drop($event)>
     <li *ngFor="let tab of tabsService.tabs; let i = index"
       class="tab" [class.active-tab]="tab.active"
+      [class.size-8]="tabsService.tabs.length == 8"
+      [class.size-9]="tabsService.tabs.length == 9"
+      [class.size-10]="tabsService.tabs.length == 10"
+      [class.size-11]="tabsService.tabs.length == 11"
+      [class.size-12]="tabsService.tabs.length == 12"
       (mousedown)="selectTab(i)" cdkDrag cdkDragBoundary=".tab-bar">
-      {{tab.name}}
+      <span class="tab-title">{{tab.name}}</span>
       <button class="close-tab-btn"
         (click)="closeTab(i)">
         x
