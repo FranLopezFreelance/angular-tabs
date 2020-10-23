@@ -1,7 +1,6 @@
 <ul class="nav-bar">
-  <li class="link" (click)="newTab('tab1', 'Tab 1')">Tab 1 +</li>
-  <li class="link" (click)="newTab('tab2', 'Tab 2')">Tab 2 +</li>
-  <li class="link" (click)="newTab('tab3', 'Tab 3')">Tab 3 +</li>
-  <li class="link" (click)="newTab('tab4', 'Tab 4')">Tab 4 +</li>
-  <li class="link" (click)="newTab('tab5', 'Tab 5')">Tab 5 +</li>
+  <li *ngFor="let tab of tabs"
+    class="link"
+    (click)="newTab(tab.url, tab.name)">
+    {{ tab.name }} +</li>
 </ul>
