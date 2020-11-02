@@ -1,6 +1,6 @@
 <ul class="nav-bar">
-  <li *ngFor="let tab of tabs"
+  <li *ngFor="let section of sections"
     class="link"
-    (click)="newTab(tab.url, tab.name)">
-    {{ tab.name }} +</li>
+    (click)="newTab(section.url, section.name)">
+      {{ section.name }} +</li>
 </ul>

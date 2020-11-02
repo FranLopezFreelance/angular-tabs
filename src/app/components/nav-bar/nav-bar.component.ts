@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TabsService } from 'src/app/core/services/tabs.service';
-import { tabs } from 'src/app/mocks/tabs';
-import { Tab } from 'src/app/models/Tab';
+import { sections } from 'src/app/mocks/sections';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,7 +9,8 @@ import { Tab } from 'src/app/models/Tab';
 })
 export class NavBarComponent implements OnInit {
 
-  tabs: Tab[] = tabs;
+  sections: any[] = sections;
+
   constructor(
     private tabSrevice: TabsService
   ) { }
