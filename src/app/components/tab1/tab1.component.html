@@ -1,3 +1,6 @@
+<h1>Tab 1</h1>
+<hr />
+<h3>Form 1</h3>
 <form>
   <div class="form-group">
     <input type="text" class="form-control" [(ngModel)]="form1.name"
@@ -6,5 +9,19 @@
   <div class="form-group">
     <input type="text" class="form-control" [(ngModel)]="form1.email"
       name="email" placeholder="Email"/>
+  </div>
+</form>
+
+<hr />
+
+<h3>Form 2</h3>
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control" [(ngModel)]="form2.name"
+      name="name" placeholder="Nombre" />
+  </div>
+  <div class="form-group">
+    <textarea class="form-control" [(ngModel)]="form2.text"
+      name="text" rows="3"></textarea>
   </div>
 </form>

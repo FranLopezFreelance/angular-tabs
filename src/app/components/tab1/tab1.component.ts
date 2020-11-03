@@ -14,9 +14,13 @@ export class Tab1Component implements OnInit, OnDestroy {
   storeSubscription: Subscription;
 
   form1: any = {
-    _id: 'form1',
     name: '',
     email: ''
+  }
+
+  form2: any = {
+    name: '',
+    text: ''
   }
 
   constructor(
@@ -33,13 +37,15 @@ export class Tab1Component implements OnInit, OnDestroy {
       if(tab){
         if(tab.models.length){
           this.form1 = {...tab.models[0]};
+          this.form2 = {...tab.models[1]};
         }
       }
     });
   }
 
   ngOnDestroy(){
-    this.tabsService.updateTabStore(this.tabId, {models: [this.form1]});
+    this.tabsService.updateTabStore(this.tabId,
+      {models: [this.form1, this.form2]});
     if(this.storeSubscription){
       this.storeSubscription.unsubscribe();
     }

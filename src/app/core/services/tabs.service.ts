@@ -29,7 +29,7 @@ export class TabsService {
   initialState(){
     //Inicializar el store
     if(localStorage.getItem('TABS')){
-      this.tabs = JSON.parse(localStorage.getItem('TABS'));
+      /* this.tabs = JSON.parse(localStorage.getItem('TABS'));
       if(this.location.path().length && this.location.path() != '/'){
         const path = this.paths.filter(p => '/' + p.url == this.location.path());
         if(path){
@@ -46,7 +46,7 @@ export class TabsService {
         if(this.tabs[i].active){
           this.setActiveTab(i);
         }
-      }
+      } */
     }else{
       localStorage.setItem('TABS', JSON.stringify(this.tabs));
     }
@@ -99,6 +99,7 @@ export class TabsService {
     }else{
       this.router.navigate(['/']);
     }
+    this.deleteTabStore(this.tabs[i].id);
     this.tabs.splice(i, 1);
     this.saveTabsInStorage();
   }
@@ -127,5 +128,9 @@ export class TabsService {
 
   updateTabStore(id: ID, tab: Partial<TabStore>){
     this.tabsStore.update(id, tab);
+  }
+
+  deleteTabStore(id: ID){
+    this.tabsStore.remove(id);
   }
 }
